@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 import { getDomainConfig } from '@/lib/domain-config';
 
-export const runtime = 'edge';
+// Default Node.js runtime
 
 // ── Kohinoor "K" Favicon — Official Red Box with Signature "K" Insignia ──
 const KOHINOOR_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 import { getDomainConfig } from '@/lib/domain-config';
 
-export const runtime = 'edge';
+// Default Node.js runtime
 
 export async function GET() {
   const headersList = await headers();

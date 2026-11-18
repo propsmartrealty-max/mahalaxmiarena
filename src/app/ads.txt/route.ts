@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export const runtime = 'edge';
+// Default Node.js runtime
 
 export async function GET() {
   // Disallow all programmatic ad brokers (pure official real estate direct portal)
