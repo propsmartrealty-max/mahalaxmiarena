@@ -20,8 +20,11 @@ import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 
 export default async function MainLayout({ h1, keyword, children }: { h1?: string, keyword?: string, children?: React.ReactNode }) {
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'kohinoorthearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'kohinoorthearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
 
   return (

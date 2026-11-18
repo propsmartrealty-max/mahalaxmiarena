@@ -5,13 +5,16 @@ import { getDomainConfig } from '@/lib/domain-config';
 
 type Props = { params: Promise<{ intent: string }> };
 
-export async function generateStaticParams() { return []; }
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const p = await params;
   const intentStr = p.intent.replace(/-/g, ' ');
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'mahalaxmithearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'mahalaxmithearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
   const ogTitle = encodeURIComponent(`Mahalaxmi The Arena Pimpri — ${intentStr}`);
   const ogSub   = encodeURIComponent('Luxury 2, 3 & 4 BHK | Pimpri, Pune');
@@ -34,13 +37,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   };
 }
-export const revalidate = 3600;
-
 export default async function Page({ params }: Props) {
   const p = await params;
   const intentStr = p.intent.replace(/-/g, ' ');
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'mahalaxmithearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'mahalaxmithearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
   const pageUrl = `${cfg.canonical}/mahalaxmi-the-arena-pimpri/${p.intent}`;
 

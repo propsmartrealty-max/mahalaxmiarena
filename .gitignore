@@ -43,6 +43,9 @@ credentials*.json
 # open-next
 .open-next
 
+# wrangler
+.wrangler
+
 
 # typescript
 *.tsbuildinfo

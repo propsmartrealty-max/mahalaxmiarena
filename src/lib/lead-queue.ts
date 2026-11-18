@@ -109,7 +109,25 @@ export function recordLeadFailure(id: string, error: string): void {
   } catch {}
 }
 
-// ── 5. Enterprise Input Sanitizer & XSS Shield ──────────────────
+// ── 5. Get Lead Stats for Healthcheck ───────────────────────────
+export function getLeadStats(): { totalPending: number; totalInMemory: number; outboxStatus: string } {
+  try {
+    const pending = getPendingLeads().length;
+    return {
+      totalPending: pending,
+      totalInMemory: inMemoryQueue.length,
+      outboxStatus: 'active',
+    };
+  } catch {
+    return {
+      totalPending: 0,
+      totalInMemory: inMemoryQueue.length,
+      outboxStatus: 'in-memory-only',
+    };
+  }
+}
+
+// ── 6. Enterprise Input Sanitizer & XSS Shield ──────────────────
 export function deepSanitize(val: unknown): string {
   if (typeof val !== 'string') return '';
   return val

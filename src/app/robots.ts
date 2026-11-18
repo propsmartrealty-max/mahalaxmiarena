@@ -33,6 +33,7 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
           '/api/cron',
           '/api/test-email',
           '/api/google-index',
+          '/api/health',
         ],
       },
       {
@@ -176,6 +177,7 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
           '/api/cron',
           '/api/test-email',
           '/api/google-index',
+          '/api/health',
           '/_next/',
         ],
       },

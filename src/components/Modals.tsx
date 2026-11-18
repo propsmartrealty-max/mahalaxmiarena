@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useAppContext } from "@/context/AppContext";
+import { queueOfflineLead } from "@/lib/offline-lead-sync";
 
 export default function Modals() {
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -101,9 +102,29 @@ export default function Modals() {
           submitBtn.textContent = 'Submit Request';
         }
       } catch {
-        window.dispatchEvent(new CustomEvent('arena-toast', { detail: '❌ Network error. Please check your connection and retry.' }));
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit Request';
+        // ── Digital Fortress Fail-Safe Offline Protection ──
+        queueOfflineLead({
+          name,
+          phone,
+          email: email || undefined,
+          configuration: configuration || undefined,
+          domain: typeof window !== 'undefined' ? window.location.hostname : 'kohinoorthearena.in',
+          source: `Modal Enquiry (Fail-Safe Offline): ${title}`,
+          utm: utmData,
+        });
+
+        sessionStorage.setItem('mta_lead_captured', 'true');
+        window.dispatchEvent(new CustomEvent('arena-close-modal'));
+        window.dispatchEvent(new CustomEvent('arena-toast', { detail: '✅ Enquiry saved securely! Opening WhatsApp sales desk...' }));
+
+        // Launch WhatsApp directly without depending on server
+        const isMahalaxmi = typeof window !== 'undefined' && window.location.hostname.includes('mahalaxmi');
+        const brandName = isMahalaxmi ? 'Mahalaxmi The Arena' : 'Kohinoor The Arena';
+        const waMsg = `Hi, I have submitted an enquiry for ${title} at ${brandName} Pimpri:\n• Name: ${name}\n• Phone: ${phone}\n• Configuration: ${configuration || '2/3/4 BHK'}\n• Domain: ${typeof window !== 'undefined' ? window.location.hostname : ''}`;
+        const waUrl = `https://wa.me/917744009295?text=${encodeURIComponent(waMsg)}`;
+        setTimeout(() => {
+          window.open(waUrl, '_blank');
+        }, 500);
       }
     };
 

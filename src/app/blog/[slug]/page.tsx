@@ -2,18 +2,24 @@ import { getPostBySlug, getBlogPosts } from "@/lib/blog";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
+import NotFound from "@/app/not-found";
 import { Metadata } from "next";
 
 import { headers } from "next/headers";
 import { getDomainConfig } from "@/lib/domain-config";
+
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const p = await params;
   const post = getPostBySlug(p.slug);
   if (!post) return { title: 'Not Found' };
 
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'kohinoorthearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'kohinoorthearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
   const postUrl = `${cfg.canonical}/blog/${p.slug}`;
 
@@ -39,23 +45,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export async function generateStaticParams() {
-  const posts = getBlogPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
-
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const p = await params;
   const post = getPostBySlug(p.slug);
   
   if (!post) {
-    notFound();
+    return <NotFound />;
   }
 
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'kohinoorthearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'kohinoorthearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
   const postUrl = `${cfg.canonical}/blog/${p.slug}`;
 

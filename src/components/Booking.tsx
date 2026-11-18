@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { queueOfflineLead, initOfflineLeadSync } from '@/lib/offline-lead-sync';
 
 interface BrowserWindow extends Window {
   grecaptcha?: { execute: (key: string, opts: { action: string }) => Promise<string> };
@@ -8,6 +9,10 @@ interface BrowserWindow extends Window {
 
 export default function Booking() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    initOfflineLeadSync();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -97,7 +102,29 @@ export default function Booking() {
         window.dispatchEvent(new CustomEvent('arena-toast', { detail: `⚠️ ${data.error || 'Submission failed.'}` }));
       }
     } catch {
-      window.dispatchEvent(new CustomEvent('arena-toast', { detail: '❌ Network error. Please try again.' }));
+      // ── Digital Fortress Fail-Safe Offline Protection ──
+      queueOfflineLead({
+        name,
+        phone,
+        email: email || undefined,
+        configuration: configuration || undefined,
+        domain: typeof window !== 'undefined' ? window.location.hostname : 'kohinoorthearena.in',
+        source: `VIP Booking Form (Fail-Safe Offline): ${pageH1}`,
+        utm: utmData,
+      });
+
+      window.dispatchEvent(new CustomEvent('arena-toast', { detail: '✅ Enquiry saved securely! Opening WhatsApp sales desk...' }));
+      sessionStorage.setItem('mta_lead_captured', 'true');
+      form.reset();
+
+      // Launch WhatsApp directly without depending on server
+      const isMahalaxmi = typeof window !== 'undefined' && window.location.hostname.includes('mahalaxmi');
+      const brandName = isMahalaxmi ? 'Mahalaxmi The Arena' : 'Kohinoor The Arena';
+      const waMsg = `Hi, I have submitted an official enquiry for ${brandName} Pimpri:\n• Name: ${name}\n• Phone: ${phone}\n• Configuration: ${configuration || '2, 3 & 4 BHK'}\n• Domain: ${typeof window !== 'undefined' ? window.location.hostname : ''}`;
+      const waUrl = `https://wa.me/917744009295?text=${encodeURIComponent(waMsg)}`;
+      setTimeout(() => {
+        window.open(waUrl, '_blank');
+      }, 500);
     } finally {
       setIsSubmitting(false);
     }

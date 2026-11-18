@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getPSEOPageData, generatePSEOMatrix } from '@/lib/pseo-data';
+import NotFound from '@/app/not-found';
+import { getPSEOPageData } from '@/lib/pseo-data';
 import MainLayout from '@/components/MainLayout';
 import Link from 'next/link';
 
@@ -11,12 +12,7 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-export const revalidate = 3600; // Edge Route Caching (1 Hour)
-export const dynamicParams = true;
-
-export async function generateStaticParams() {
-  return [];
-}
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const p = await params;
@@ -26,8 +22,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: 'Page Not Found' };
   }
 
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'kohinoorthearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'kohinoorthearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
   const pageUrl = `${cfg.canonical}/${p.slug}`;
 
@@ -63,11 +62,14 @@ export default async function PSEOPage({ params }: Props) {
   const data = getPSEOPageData(p.slug);
   
   if (!data) {
-    notFound();
+    return <NotFound />;
   }
 
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'kohinoorthearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'kohinoorthearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
   const pageUrl = `${cfg.canonical}/${p.slug}`;
 
