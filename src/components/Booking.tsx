@@ -64,9 +64,16 @@ export default function Booking() {
           win.gtag('event', 'conversion', { 'send_to': process.env.NEXT_PUBLIC_GADS_CONVERSION_LABEL || 'AW-CONVERSION/label' });
         }
         
-        window.dispatchEvent(new CustomEvent('arena-toast', { detail: '✅ Success! Our team will contact you shortly.' }));
+        window.dispatchEvent(new CustomEvent('arena-toast', { detail: '✅ Success! Opening WhatsApp enquiry with sales desk...' }));
         sessionStorage.setItem('mta_lead_captured', 'true');
         form.reset();
+
+        // ── Instant WhatsApp Direct Link to 7744009295 ──
+        const waMsg = `Hi PropSmart Realty, I have submitted an official enquiry for The Arena Pimpri:\n• Name: ${name}\n• Phone: ${phone}\n• Configuration: ${configuration || '2, 3 & 4 BHK'}\n• Domain: ${window.location.hostname}`;
+        const waUrl = `https://wa.me/917744009295?text=${encodeURIComponent(waMsg)}`;
+        setTimeout(() => {
+          window.open(waUrl, '_blank');
+        }, 600);
       } else {
         window.dispatchEvent(new CustomEvent('arena-toast', { detail: `⚠️ ${data.error || 'Submission failed.'}` }));
       }

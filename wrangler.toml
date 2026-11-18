@@ -10,3 +10,5 @@ crons = ["15 0 * * *"]
 [vars]
 GOOGLE_INDEXING_CLIENT_EMAIL = "mahaxmi@vivid-reality-419916.iam.gserviceaccount.com"
 LEAD_RECIPIENT_EMAIL = "propsmartrealty@gmail.com"
+NEXT_PUBLIC_WHATSAPP_NUMBER = "917744009295"
+NEXT_PUBLIC_CONTACT_PHONE = "+91-7744009295"

@@ -62,12 +62,19 @@ export default function Modals() {
         if (response.ok && data.success) {
           sessionStorage.setItem('mta_lead_captured', 'true');
           window.dispatchEvent(new CustomEvent('arena-close-modal'));
-          window.dispatchEvent(new CustomEvent('arena-toast', { detail: '✅ Success! Our luxury team will contact you shortly.' }));
+          window.dispatchEvent(new CustomEvent('arena-toast', { detail: '✅ Success! Connecting to WhatsApp sales desk...' }));
 
           const win = window as Window & { dataLayer?: Record<string, unknown>[] };
           if (typeof window !== 'undefined' && win.dataLayer) {
             win.dataLayer.push({ event: 'lead_captured', lead_type: title, configuration, lead_source: window.location.href });
           }
+
+          // ── Instant WhatsApp Direct Link to 7744009295 ──
+          const waMsg = `Hi PropSmart Realty, I have submitted an enquiry for ${title} at The Arena Pimpri:\n• Name: ${name}\n• Phone: ${phone}\n• Configuration: ${configuration || '2/3/4 BHK'}\n• Domain: ${window.location.hostname}`;
+          const waUrl = `https://wa.me/917744009295?text=${encodeURIComponent(waMsg)}`;
+          setTimeout(() => {
+            window.open(waUrl, '_blank');
+          }, 600);
         } else {
           const errMsg = data.error || 'Submission failed. Please try again.';
           window.dispatchEvent(new CustomEvent('arena-toast', { detail: `⚠️ ${errMsg}` }));

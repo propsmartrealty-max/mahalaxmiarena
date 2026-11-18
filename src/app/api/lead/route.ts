@@ -169,6 +169,8 @@ export async function POST(request: Request) {
       timestamp: new Date().toISOString(),
     });
 
+    console.log(`[PROPSMART LEAD CAPTURED] Name: ${name} | Phone: ${phone} | Config: ${configuration} | Domain: ${domain} | Source: ${source}`);
+
     // ─────────────────────────────────────────
     // STEP 1: NODEMAILER (PRIMARY EMAIL DISPATCH)
     // ─────────────────────────────────────────

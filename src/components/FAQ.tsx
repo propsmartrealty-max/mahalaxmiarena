@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     question: "How to book a flat or arrange a site visit at Kohinoor The Arena?",
-    answer: "To schedule a physical VIP site walkthrough, inspect the 34-storey architectural models, or submit an Expression of Interest (EOI) for priority inventory allotment, submit your enquiry on the website or contact our senior sales team at +91-7711993434."
+    answer: "To schedule a physical VIP site walkthrough, inspect the 34-storey architectural models, or submit an Expression of Interest (EOI) for priority inventory allotment, submit your enquiry on the website or contact our senior sales team at +91-7744009295."
   },
   {
     question: "पिंपरी मध्ये २ व ३ बीएचके फ्लॅट बुकिंग कशी करावी? (Pimpri madhe flat booking)",
