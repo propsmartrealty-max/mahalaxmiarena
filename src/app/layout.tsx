@@ -187,6 +187,66 @@ export default async function RootLayout({
         { '@type': 'LocationFeatureSpecification', name: 'Finolex Chowk Proximity', value: 'Under 5 minutes' },
         { '@type': 'LocationFeatureSpecification', name: 'Commercial Hub Proximity', value: '2 km from Kohinoor World Towers' },
       ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: `${cfg.arenaName} Residential Configurations & Pricing`,
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Accommodation',
+              name: `2 BHK Smart Luxury Residences at ${cfg.arenaName}`,
+              numberOfBedrooms: 2,
+              floorSize: {
+                '@type': 'QuantitativeValue',
+                value: 865,
+                unitCode: 'FTK'
+              },
+              description: 'Luxury 2 BHK flats with zero-wastage layouts, private balconies, and full access to 80,000 sq.ft. sports ecosystem.'
+            },
+            price: 12000000,
+            priceCurrency: 'INR',
+            availability: 'https://schema.org/InStock',
+            validFrom: '2026-01-01'
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Accommodation',
+              name: `3 BHK Premium Residences at ${cfg.arenaName}`,
+              numberOfBedrooms: 3,
+              floorSize: {
+                '@type': 'QuantitativeValue',
+                value: 1250,
+                unitCode: 'FTK'
+              },
+              description: 'Spacious 3 BHK luxury residences with panoramic views, dual master suites, and dedicated covered parking.'
+            },
+            price: 17500000,
+            priceCurrency: 'INR',
+            availability: 'https://schema.org/InStock',
+            validFrom: '2026-01-01'
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Accommodation',
+              name: `4 BHK Sky Penthouses at ${cfg.arenaName}`,
+              numberOfBedrooms: 4,
+              floorSize: {
+                '@type': 'QuantitativeValue',
+                value: 1980,
+                unitCode: 'FTK'
+              },
+              description: 'Grand 4 BHK sky residences with expansive private decks, staff quarters, and top-tier smart home automation.'
+            },
+            price: 29500000,
+            priceCurrency: 'INR',
+            availability: 'https://schema.org/InStock',
+            validFrom: '2026-01-01'
+          }
+        ]
+      },
     },
     {
       '@context': 'https://schema.org',

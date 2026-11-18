@@ -316,7 +316,7 @@ export const ARENA_DATA = {
   ],
 
   connectivity: {
-    tagline: "Pimpri, In Motion With You",
+    tagline: "The Arena, Designed for Champions",
     subtitle: "Located in the well-connected heart of Pimpri, Pune. Easy access to industrial hubs, IT parks, top schools, and metro corridors.",
     categories: [
       {

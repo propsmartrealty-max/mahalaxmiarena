@@ -98,7 +98,7 @@ export default function Connectivity() {
       <div className="container">
         <div className="text-center">
           <span className="badge-neon">• STRATEGIC LOCATION •</span>
-          <h2 className="section-title">PIMPRI, IN MOTION <span className="highlight-neon">WITH YOU</span></h2>
+          <h2 className="section-title">THE ARENA PIMPRI <span className="highlight-neon">STRATEGIC CONNECTIVITY</span></h2>
           <p className="section-subtitle">Located in the well-connected heart of Pimpri, PCMC. Easy access to Hinjewadi IT Park, top schools, hospitals, and the PCMC Metro Line 1, making it one of the best residential projects in Pimpri.</p>
         </div>
 

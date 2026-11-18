@@ -226,7 +226,7 @@ export default function Ecosystem() {
               <div className="pillar-media-overlay">
                 <div className="partner-badge-box">
                   <h5>
-                    <i className="ri-calendar-event-line"></i> Community in Motion
+                    <i className="ri-calendar-event-line"></i> Active Community Life
                   </h5>
                   <p>
                     Multiple zones that encourage interaction, social bonding, and

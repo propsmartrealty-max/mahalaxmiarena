@@ -46,7 +46,7 @@ export default function Hero({ h1, keyword }: { h1?: string, keyword?: string })
         )}
 
         <p className="hero-subtitle">
-          Discover premium 2, 3 & 4 BHK luxury apartments in Pimpri. Featuring an 80,000 Sq. Ft. Sports Ecosystem, 11 Towers, and managed by Ileseum.
+          Discover PCMC&apos;s premier active sports township near Finolex Chowk &amp; PCMC Metro. Luxury 2, 3 &amp; 4 BHK apartments across 11 high-rise towers with an 80,000 Sq. Ft. athletic ecosystem managed by ILESEUM. MahaRERA PR1261012602774.
         </p>
 
         <div className="hero-buttons">

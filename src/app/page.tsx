@@ -25,14 +25,16 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Home() {
   const headersList = await headers();
+  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  const cfg = getDomainConfig(host);
   const intent = headersList.get('x-arena-intent');
   
-  let h1 = "Mahalaxmi The Arena - Kohinoor The Arena Pimpri | Premium Sports Township PCMC, Pune.";
-  let keyword = "MAHALAXMI THE ARENA • SPORTS TOWNSHIP PIMPRI";
+  let h1 = `${cfg.arenaName} Pimpri Pune | ${cfg.brand} & ${cfg.coDevName} Sports Township`;
+  let keyword = `${cfg.arenaName.toUpperCase()} • SPORTS TOWNSHIP PIMPRI`;
   
   if (intent) {
     const formattedIntent = intent.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-    h1 = `${formattedIntent} at Mahalaxmi The Arena Pimpri`;
+    h1 = `${formattedIntent} at ${cfg.arenaName} Pimpri`;
     keyword = `CUSTOMIZED RESULTS FOR: ${formattedIntent.toUpperCase()}`;
   }
 
