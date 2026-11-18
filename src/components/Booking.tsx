@@ -86,7 +86,7 @@ export default function Booking() {
         form.reset();
 
         // ── Instant WhatsApp Direct Link to 7744009295 ──
-        const waMsg = `Hi PropSmart Realty, I have submitted an official enquiry for The Arena Pimpri:\n• Name: ${name}\n• Phone: ${phone}\n• Configuration: ${configuration || '2, 3 & 4 BHK'}\n• Domain: ${window.location.hostname}`;
+        const waMsg = `Hi, I have submitted an official enquiry for The Arena Pimpri:\n• Name: ${name}\n• Phone: ${phone}\n• Configuration: ${configuration || '2, 3 & 4 BHK'}\n• Domain: ${window.location.hostname}`;
         const waUrl = `https://wa.me/917744009295?text=${encodeURIComponent(waMsg)}`;
         setTimeout(() => {
           window.open(waUrl, '_blank');
