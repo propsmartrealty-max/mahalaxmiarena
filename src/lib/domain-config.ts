@@ -61,25 +61,25 @@ export type DomainConfig = {
 const MASTER_SHARED_KEYWORDS = [
   // 1. Core Project & Joint Venture
   'Mahalaxmi Kohinoor Pimpri', 'Mahalaxmi Kohinoor Pimpri Pune', 'Mahalaxmi Kohinoor project',
-  'Mahalaxmi Kohinoor project Pimpri', 'Mahalaxmi Kohinoor Life in Motion', 'Life in Motion Pimpri',
-  'Life in Motion Pune', 'Life in Motion Mahalaxmi Kohinoor', 'Mahalaxmi Group Kohinoor Group Pimpri',
+  'Mahalaxmi Kohinoor project Pimpri', 'Mahalaxmi Kohinoor The Arena', 'The Arena Pimpri',
+  'The Arena Pune', 'The Arena Mahalaxmi Kohinoor', 'Mahalaxmi Group Kohinoor Group Pimpri',
   'Mahalaxmi Kohinoor township', 'Mahalaxmi Kohinoor sports township', 'Mahalaxmi Kohinoor residential project',
   'Mahalaxmi Kohinoor new project', 'Mahalaxmi Kohinoor upcoming project', 'Mahalaxmi Kohinoor new launch',
   'Mahalaxmi Kohinoor pre launch', 'Mahalaxmi Kohinoor booking', 'Mahalaxmi Kohinoor property',
   'Mahalaxmi Kohinoor flats', 'Mahalaxmi Kohinoor apartments', 'Mahalaxmi Kohinoor homes',
 
-  // 2. Life in Motion Brand Signals
-  'Life in Motion Chinchwad', 'Life in Motion PCMC', 'Life in Motion residential project',
-  'Life in Motion apartments', 'Life in Motion flats', 'Life in Motion township',
-  'Life in Motion price', 'Life in Motion floor plan', 'Life in Motion brochure',
-  'Life in Motion amenities', 'Life in Motion location', 'Life in Motion RERA',
+  // 2. The Arena Brand Signals
+  'The Arena Chinchwad', 'The Arena PCMC', 'The Arena residential project',
+  'The Arena apartments', 'The Arena flats', 'The Arena township',
+  'The Arena price', 'The Arena floor plan', 'The Arena brochure',
+  'The Arena amenities', 'The Arena location', 'The Arena RERA',
 
   // 3. Configurations (2 BHK & 3 BHK)
   'Mahalaxmi Kohinoor 2 BHK', 'Mahalaxmi Kohinoor 2 BHK Pimpri', 'Mahalaxmi Kohinoor 2 BHK Pune',
   'Mahalaxmi Kohinoor 2 BHK price', 'Mahalaxmi Kohinoor 2 BHK booking', 'Mahalaxmi Kohinoor 2 BHK floor plan',
   'Mahalaxmi Kohinoor 3 BHK', 'Mahalaxmi Kohinoor 3 BHK Pimpri', 'Mahalaxmi Kohinoor 3 BHK Pune',
   'Mahalaxmi Kohinoor 3 BHK price', 'Mahalaxmi Kohinoor 3 BHK booking', 'Mahalaxmi Kohinoor 3 BHK floor plan',
-  'Life in Motion 2 BHK', 'Life in Motion 2 BHK Pimpri', 'Life in Motion 3 BHK', 'Life in Motion 3 BHK Pimpri',
+  'The Arena 2 BHK', 'The Arena 2 BHK Pimpri', 'The Arena 3 BHK', 'The Arena 3 BHK Pimpri',
   '2 BHK flats in Pimpri', '2 BHK flats in Pimpri Pune', '3 BHK flats in Pimpri', '3 BHK flats in Pimpri Pune',
   '2 BHK apartments in Pimpri', '3 BHK apartments in Pimpri', 'luxury 2 BHK Pimpri', 'luxury 3 BHK Pimpri',
   'premium 2 BHK Pimpri', 'premium 3 BHK Pimpri', 'spacious 2 BHK Pimpri', 'spacious 3 BHK Pimpri',
@@ -113,12 +113,12 @@ const MASTER_SHARED_KEYWORDS = [
   'Pimpri madhye 3 BHK', 'Pimpri new project', 'Pimpri upcoming project', 'Pimpri flat booking',
   'PCMC madhe flat', 'PCMC madhye flat', 'Pimpri metro javal flat', 'Pimpri railway station javal flat',
   'Chinchwad railway station javal flat', 'PCMC metro javal flat', 'Mahalaxmi Kohinoor Pimpri Marathi',
-  'Life in Motion Pimpri Marathi', 'Kohinoor Pimpri flat Marathi', 'Pimpri madhe navin flat',
+  'The Arena Pimpri Marathi', 'Kohinoor Pimpri flat Marathi', 'Pimpri madhe navin flat',
   'Pimpri madhe ghar kuthe gheu', 'Pimpri madhe best flat', 'Pimpri madhe investment sathi flat',
 
   // 8. High-Intent Questions / Google SGE & AI Overviews
   'Mahalaxmi Kohinoor price kya hai', 'Mahalaxmi Kohinoor booking kaise kare',
-  'Mahalaxmi Kohinoor location kaha hai', 'Life in Motion price kya hai', 'Pimpri mein best flat kaunsa hai',
+  'Mahalaxmi Kohinoor location kaha hai', 'The Arena price kya hai', 'Pimpri mein best flat kaunsa hai',
   'Pimpri mein 2 BHK kaha milega', 'Pimpri mein 3 BHK kaha milega', 'PCMC metro ke paas flat',
 
   // 9. Investment & ROI
@@ -133,11 +133,11 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
     coDevName: 'Mahalaxmi Group',
     projectName: 'Kohinoor The Arena',
     arenaName: 'Kohinoor The Arena',
-    tagline: 'Life in Motion | Pimpri Chinchwad, Pune',
+    tagline: 'The Arena | Pimpri Chinchwad, Pune',
     canonical: 'https://www.kohinoorthearena.in',
     sitemapUrl: 'https://www.kohinoorthearena.in/sitemap.xml',
     ogImage: 'https://www.kohinoorthearena.in/assets/images/hero.jpg',
-    title: 'Kohinoor The Arena by Kohinoor Group | Life in Motion | 2, 3 & 4 BHK in Pimpri Chinchwad, Pune',
+    title: 'Kohinoor The Arena by Kohinoor Group | 2, 3 & 4 BHK in Pimpri Chinchwad, Pune',
     description: 'Kohinoor The Arena by Kohinoor Group & Mahalaxmi Group — PCMC\'s premier sports township in Pimpri Chinchwad, Pune. 2, 3 & 4 BHK luxury residences across 11 towers with an 80,000 Sq. Ft. active sports ecosystem managed by ILESEUM. Near PCMC Metro & KWT.',
     keywords: [
       'Kohinoor The Arena',
@@ -209,11 +209,11 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
     coDevName: 'Kohinoor Group',
     projectName: 'Mahalaxmi The Arena',
     arenaName: 'Mahalaxmi The Arena',
-    tagline: 'Life in Motion | Pimpri, Pune',
+    tagline: 'The Arena | Pimpri, Pune',
     canonical: 'https://www.mahalaxmithearena.in',
     sitemapUrl: 'https://www.mahalaxmithearena.in/sitemap.xml',
     ogImage: 'https://www.mahalaxmithearena.in/assets/images/hero.jpg',
-    title: 'Mahalaxmi The Arena by Mahalaxmi Group | Life in Motion | 2, 3 & 4 BHK in Pimpri, Pune',
+    title: 'Mahalaxmi The Arena by Mahalaxmi Group | 2, 3 & 4 BHK in Pimpri, Pune',
     description: 'Mahalaxmi The Arena by Mahalaxmi Group & Kohinoor Group — Pimpri\'s ultra-modern sports township in Pune. 2, 3 & 4 BHK luxury residences across 11 towers with an 80,000 Sq. Ft. active sports ecosystem managed by ILESEUM. Near PCMC Metro & KWT.',
     keywords: [
       'Mahalaxmi The Arena',
@@ -225,7 +225,7 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
       'Mahalaxmi Arena 2 BHK Pimpri',
       'Mahalaxmi Arena 3 BHK Pune',
       'Mahalaxmi Arena 4 BHK PCMC',
-      'Life in Motion Pimpri Pune',
+      'The Arena Pimpri Pune',
       'Mahalaxmi Kohinoor township',
       'Mahalaxmi Kohinoor project',
       ...MASTER_SHARED_KEYWORDS,

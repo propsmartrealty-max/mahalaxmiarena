@@ -11,7 +11,7 @@ export default function Philosophy() {
           </h2>
           <p className="section-subtitle">
             Why Pimpri requires a paradigm shift from traditional residential
-            apartments to an integrated Life in Motion athletic operating system.
+            apartments to an integrated athletic operating system at The Arena.
           </p>
         </div>
 

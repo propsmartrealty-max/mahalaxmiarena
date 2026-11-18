@@ -125,15 +125,15 @@ export default async function RootLayout({
       name: cfg.arenaName,
       alternateName: [
         'Mahalaxmi Kohinoor Pimpri',
-        'Mahalaxmi Kohinoor Life in Motion',
+        'Mahalaxmi Kohinoor The Arena',
         'Mahalaxmi Kohinoor Pune',
         'Mahalaxmi Kohinoor Sports Township',
         'Mahalaxmi Kohinoor 2 BHK 3 BHK',
         `${cfg.brand} ${cfg.arenaName}`,
         `${cfg.arenaName} ${cfg.address.locality}`,
         `${cfg.arenaName} ${cfg.address.city}`,
-        'Life in Motion Sports Township Pimpri',
-        'Life in Motion Mahalaxmi Kohinoor',
+        'The Arena Sports Township Pimpri',
+        'The Arena Mahalaxmi Kohinoor',
       ],
       image: cfg.ogImage,
       description: cfg.description,
@@ -179,7 +179,7 @@ export default async function RootLayout({
       name: `${cfg.brand} & ${cfg.coDevName}`,
       url: siteUrl,
       image: cfg.ogImage,
-      description: `${cfg.brand} & ${cfg.coDevName} — Joint venture developers of ${cfg.arenaName} (Life in Motion), premium ${cfg.projectConfig.bhkOptions} sports township in ${cfg.address.locality}, ${cfg.address.city}.`,
+      description: `${cfg.brand} & ${cfg.coDevName} — Joint venture developers of ${cfg.arenaName}, premium ${cfg.projectConfig.bhkOptions} sports township in ${cfg.address.locality}, ${cfg.address.city}.`,
       address: {
         '@type': 'PostalAddress',
         streetAddress: cfg.address.street,
@@ -198,8 +198,8 @@ export default async function RootLayout({
       mainEntity: [
         {
           '@type': 'Question',
-          name: `What is Mahalaxmi Kohinoor Pimpri (Life in Motion)?`,
-          acceptedAnswer: { '@type': 'Answer', text: `Mahalaxmi Kohinoor Pimpri (The Arena — Life in Motion) is a landmark joint venture luxury residential development by Mahalaxmi Group and Kohinoor Group in Pimpri Chinchwad, Pune. Spanning 11 towers across a 20-acre land parcel with an 80,000 Sq.Ft. sports ecosystem managed by ILESEUM Sports Management.` },
+          name: `What is Mahalaxmi Kohinoor Pimpri (The Arena)?`,
+          acceptedAnswer: { '@type': 'Answer', text: `Mahalaxmi Kohinoor Pimpri (The Arena) is a landmark joint venture luxury residential development by Mahalaxmi Group and Kohinoor Group in Pimpri Chinchwad, Pune. Spanning 11 towers across a 20-acre land parcel with an 80,000 Sq.Ft. sports ecosystem managed by ILESEUM Sports Management.` },
         },
         {
           '@type': 'Question',
@@ -238,7 +238,7 @@ export default async function RootLayout({
         },
         {
           '@type': 'Question',
-          name: `What sports amenities are available at Life in Motion / The Arena?`,
+          name: `What sports amenities are available at The Arena?`,
           acceptedAnswer: { '@type': 'Answer', text: `${cfg.arenaName} features an 80,000 Sq.Ft. active sports ecosystem managed by ILESEUM Sports Management — including professional cricket ground, tennis academy, olympic swimming pool, basketball, futsal, skating rink, and sports performance centre.` },
         },
         {

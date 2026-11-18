@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 
 const faqs = [
   {
-    question: "What is Mahalaxmi Kohinoor Pimpri (Life in Motion)?",
-    answer: "Mahalaxmi Kohinoor Pimpri (The Arena — Life in Motion) is a landmark joint venture sports township by Mahalaxmi Group and Kohinoor Group in Pimpri Chinchwad, Pune. Spanning 11 towers across a master-planned parcel with an 80,000 Sq.Ft. sports operating system managed by ILESEUM Sports Management."
+    question: "What is Mahalaxmi Kohinoor Pimpri (The Arena)?",
+    answer: "Mahalaxmi Kohinoor Pimpri (The Arena) is a landmark joint venture sports township by Mahalaxmi Group and Kohinoor Group in Pimpri Chinchwad, Pune. Spanning 11 towers across a master-planned parcel with an 80,000 Sq.Ft. sports operating system managed by ILESEUM Sports Management."
   },
   {
     question: "What is the price of 2 BHK & 3 BHK at Mahalaxmi Kohinoor Pimpri?",
@@ -15,8 +15,8 @@ const faqs = [
     answer: "The Arena enjoys prime PCMC connectivity: just 2.4 km from PCMC Metro Station and Pimpri Metro, 2 km from Kohinoor World Towers (KWT Phase 2 commercial hub), 2.8 km from Pimpri Railway Station, and under 15 minutes to Hinjewadi IT Park via NH-48."
   },
   {
-    question: "What amenities are included in the Life in Motion sports township?",
-    answer: "Life in Motion is an 80,000 Sq.Ft. athletic ecosystem operated professionally by ILESEUM Sports. It features a cricket ground with practice nets, tennis academy, olympic-length swimming pool, futsal arena, basketball courts, 1,787 sq.ft. cardio gymnasium, jogging track, and dedicated youth coaching academies."
+    question: "What amenities are included in The Arena sports township?",
+    answer: "The Arena features an 80,000 Sq.Ft. athletic ecosystem operated professionally by ILESEUM Sports. It features a cricket ground with practice nets, tennis academy, olympic-length swimming pool, futsal arena, basketball courts, 1,787 sq.ft. cardio gymnasium, jogging track, and dedicated youth coaching academies."
   },
   {
     question: "पिंपरी मध्ये २ व ३ बीएचके फ्लॅट बुकिंग कशी करावी? (Pimpri madhe flat booking)",

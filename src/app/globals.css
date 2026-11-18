@@ -4,7 +4,7 @@
 :root {
   /* ============================================================
      MASTER BRAND THEME — Mahalaxmi The ARENA
-     Source: Official Brochure Cover — "Life in Motion"
+     Source: Official Brochure Cover — The Arena
      Primary: Royal Purple Velvet  |  Accent: Electric Neon Gold
   ============================================================ */
 
@@ -28,7 +28,7 @@
   --purple-glow:        rgba(128, 64, 192, 0.55);
   --purple-dark:        #0D0620;
 
-  /* ── Neon Gold: brochure "life in motion" script color ── */
+  /* ── Neon Gold: brochure script accent color ── */
   --neon-lime:          #DFFE00;
   --neon-lime-hover:    #C8EE00;
   --neon-glow:          rgba(223, 254, 0, 0.35);
@@ -3114,7 +3114,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 /* ================== BRAND SCRIPT FONT (Dancing Script) ================== */
-/* Use .font-script class for "life in motion" style headings */
+/* Use .font-script class for italic accent style headings */
 .font-script {
   font-family: 'Dancing Script', cursive;
   font-weight: 700;

@@ -36,7 +36,7 @@ export default function GlobalError({
         }}>
           <div style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>⚡</div>
           <h1 style={{ fontSize: '1.75rem', marginBottom: '1rem', color: '#DFFE00', fontWeight: '700' }}>
-            The Arena — Life in Motion
+            The Arena Pimpri
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '2rem' }}>
             A temporary connection reset occurred. Click below to reload the luxury residence portal.

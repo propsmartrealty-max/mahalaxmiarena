@@ -6,7 +6,7 @@ import { NextRequest } from 'next/server';
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const title = searchParams.get('title') || 'The Arena — Luxury Residences';
-  const sub   = searchParams.get('sub')   || 'Life in Motion | Pimpri, Pune';
+  const sub   = searchParams.get('sub')   || 'The Arena | Pimpri, Pune';
   const brand = searchParams.get('brand') || 'Mahalaxmi Group & Kohinoor Group';
 
   return new ImageResponse(

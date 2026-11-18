@@ -182,12 +182,12 @@ export async function POST(request: Request) {
         const transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: { user: EMAIL_USER, pass: EMAIL_PASS },
-          pool: true,
-          maxConnections: 3,
-          maxMessages: 50,
+          connectionTimeout: 4000,
+          greetingTimeout: 4000,
+          socketTimeout: 4000,
         });
 
-        await transporter.sendMail({
+        const sendPromise = transporter.sendMail({
           from: `"The Arena Leads" <${EMAIL_USER}>`,
           to: LEAD_RECIPIENT_EMAIL,
           replyTo: email || EMAIL_USER,
@@ -239,6 +239,12 @@ export async function POST(request: Request) {
             </div>
           `,
         });
+
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('SMTP timeout after 4s')), 4000)
+        );
+
+        await Promise.race([sendPromise, timeoutPromise]);
 
         emailStatus = 'sent';
         markLeadSent(queuedLead.id);

@@ -204,7 +204,7 @@ export default async function PSEOPage({ params }: Props) {
                 Whether you are looking for ready-to-move-in flats near PCMC Metro Station or seeking the ultimate investment property near Hinjewadi IT Park, this MahaRERA registered project delivers the pinnacle of luxury.
               </p>
               <p>
-                Experience <em>&quot;Life in Motion&quot;</em> in {data.location} with an expansive 80,000 Sq.Ft. sports ecosystem managed by ILESEUM. Starting at just {data.price}, these smart homes are meticulously designed for maximum natural light and cross ventilation.
+                Experience <em>&quot;The Arena&quot;</em> in {data.location} with an expansive 80,000 Sq.Ft. sports ecosystem managed by ILESEUM. Starting at just {data.price}, these smart homes are meticulously designed for maximum natural light and cross ventilation.
               </p>
               <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', marginTop: '1rem' }}>
                 <i className="ri-time-line"></i> Last updated: <time dateTime={currentDate.toISOString()}>{formattedDate}</time> — Pricing and availability are subject to change.

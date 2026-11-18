@@ -48,7 +48,7 @@ export default function Masterplan() {
         <div className="text-center">
           <span className="badge-purple">• TOWNSHIP MASTER PLAN •</span>
           <h2 className="section-title">11 TOWERS. ONE LIVING<br /><span className="highlight-neon">ECOSYSTEM.</span></h2>
-          <p className="section-subtitle">Explore Phase-1 premium wings and all towers — click any zone or tower to inspect details. 80,000 Sq. Ft. of life in motion at its centre.</p>
+          <p className="section-subtitle">Explore Phase-1 premium wings and all towers — click any zone or tower to inspect details. 80,000 Sq. Ft. active sports ecosystem at its centre.</p>
         </div>
 
         {/* Live Stats Ticker */}

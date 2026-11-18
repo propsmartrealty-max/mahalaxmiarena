@@ -147,7 +147,7 @@ export default function Modals() {
       // Schedule Visit
       if (target.closest('.trigger-schedule')) {
         e.preventDefault();
-        showLeadModal("Schedule VIP Site Visit", "Experience 80,000 Sq. Ft. of Life in Motion and tour our 34-storey architectural models.");
+        showLeadModal("Schedule VIP Site Visit", "Experience 80,000 Sq. Ft. of The Arena sports ecosystem and tour our 34-storey architectural models.");
       } 
       // Download Brochure
       else if (target.closest('.trigger-brochure')) {

@@ -83,7 +83,7 @@ export default function Booking() {
         <div className="booking-grid">
           <div className="booking-text">
             <span className="badge-neon">• OFFICIAL LAUNCH ENQUIRY •</span>
-            <h2>STEP INTO <span className="highlight-neon">LIFE IN MOTION</span></h2>
+            <h2>STEP INTO <span className="highlight-neon">THE ARENA</span></h2>
             <p>
               Mahalaxmi Group (25+ Years Legacy | 4.2M Sq.Ft. Delivered) in Joint Venture with Kohinoor Group and Agarwal Sukhwani Associates invites you to experience Pimpri’s landmark sports township.
             </p>

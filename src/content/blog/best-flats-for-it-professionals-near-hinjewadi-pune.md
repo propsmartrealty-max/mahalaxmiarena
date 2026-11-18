@@ -29,7 +29,7 @@ The demographic of Hinjewadi employees skews young (25–38 years), health-consc
 **3. Investment-Grade Appreciation**
 With ESOPs and quarterly bonuses, IT professionals are increasingly sophisticated investors. They want a property that appreciates alongside their career trajectory.
 
-## Why Mahalaxmi The Arena (Life in Motion) Wins
+## Why Mahalaxmi The Arena Wins
 
 **Mahalaxmi The Arena** and **Kohinoor The Arena** in Pimpri are specifically engineered for this demographic. As Pune's first **ILESEUM-managed sports township**, the 80,000 sq. ft. active ecosystem includes facilities that most standalone apartment projects simply cannot replicate.
 

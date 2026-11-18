@@ -62,7 +62,6 @@ export default function Footer({
             <li><Link href="/">Home</Link></li>
             <li><Link href={primarySlug}>Kohinoor The Arena</Link></li>
             <li><Link href={coDevSlug}>Mahalaxmi The Arena</Link></li>
-            <li><Link href="/life-in-motion-pimpri">Life in Motion</Link></li>
             <li><button className="footer-anchor-btn" onClick={() => scrollTo('residences')}>Residences</button></li>
             <li><button className="footer-anchor-btn" onClick={() => scrollTo('specifications')}>Salient Specifications</button></li>
           </ul>
@@ -86,8 +85,8 @@ export default function Footer({
           {/* Brands & Projects Silos */}
           <Link href={coDevSlug} className="seo-link">Mahalaxmi The Arena Pimpri</Link> &bull;
           <Link href={primarySlug} className="seo-link">Kohinoor The Arena</Link> &bull;
-          <Link href="/life-in-motion-pimpri" className="seo-link">Life in Motion Pimpri</Link> &bull;
-          <span className="seo-link">Life in Motion Pune</span> &bull;
+          <span className="seo-link">The Arena Pimpri</span> &bull;
+          <span className="seo-link">The Arena Pune</span> &bull;
           <span className="seo-link">Kohinoor Arena Pimpri</span> &bull;
           <span className="seo-link">The Arena PCMC</span> &bull;
           {/* Pimpri & PCMC Core */}
@@ -171,7 +170,7 @@ export default function Footer({
           <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
           <Link href="/terms" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', fontSize: '0.9rem' }}>Terms of Service</Link>
         </div>
-        <div>Designed with <span style={{ color: "var(--neon-lime)" }}>Life in Motion</span> • Pimpri, Pune</div>
+        <div>Designed for <span style={{ color: "var(--neon-lime)" }}>The Arena</span> • Pimpri, Pune</div>
       </div>
     </div>
   </footer>

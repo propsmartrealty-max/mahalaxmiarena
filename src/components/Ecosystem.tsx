@@ -171,7 +171,7 @@ export default function Ecosystem() {
                     <i className="ri-award-fill"></i> Operated by Ileseum Sports Management
                   </h5>
                   <p>
-                    A professional partner bringing Life in Motion into everyday
+                    A professional partner bringing The Arena athletic vision into everyday
                     living with reliability and pride.
                   </p>
                 </div>

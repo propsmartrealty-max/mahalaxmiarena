@@ -27,8 +27,8 @@ export default async function Home() {
   const headersList = await headers();
   const intent = headersList.get('x-arena-intent');
   
-  let h1 = "Mahalaxmi The Arena - Kohinoor The Arena - Life in Motion Pimpri | Premium Real Estate PCMC, Pune.";
-  let keyword = "MAHALAXMI THE ARENA • LIFE IN MOTION PIMPRI";
+  let h1 = "Mahalaxmi The Arena - Kohinoor The Arena Pimpri | Premium Sports Township PCMC, Pune.";
+  let keyword = "MAHALAXMI THE ARENA • SPORTS TOWNSHIP PIMPRI";
   
   if (intent) {
     const formattedIntent = intent.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());

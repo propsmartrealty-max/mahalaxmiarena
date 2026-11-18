@@ -7,7 +7,7 @@
 export const ARENA_DATA = {
   project: {
     name: "Mahalaxmi The ARENA",
-    tagline: "Life in Motion",
+    tagline: "The Arena",
     subtitle: "2, 3, & 4 BHK Sports Township in Pimpri",
     location: "Pimpri, Pune",
     developers: [
@@ -53,7 +53,7 @@ export const ARENA_DATA = {
 
   operatingSystem: {
     title: "NOT AN AMENITY PLAN. IT IS AN OPERATING SYSTEM.",
-    subtitle: "5 Integrated Pillars of Life in Motion",
+    subtitle: "5 Integrated Pillars of The Arena Ecosystem",
     pillars: [
       {
         id: "space",

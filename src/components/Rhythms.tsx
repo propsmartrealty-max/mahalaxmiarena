@@ -66,7 +66,7 @@ export default function Rhythms() {
           {/*  3. The Comeback Human  */}
           <div className="rhythm-card" data-reveal data-delay="3">
             <div className="rhythm-card-img-wrapper">
-              <Image src="/assets/images/garden_pond.jpg" alt="The Comeback Human at Life in Motion Pune" width={400} height={300} className="rhythm-card-img" style={{ width: '100%', height: 'auto' }} />
+              <Image src="/assets/images/garden_pond.jpg" alt="The Comeback Human at The Arena Pune" width={400} height={300} className="rhythm-card-img" style={{ width: '100%', height: 'auto' }} />
               <div className="rhythm-card-img-gradient"></div>
             </div>
             <div>

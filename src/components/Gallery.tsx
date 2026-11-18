@@ -36,7 +36,7 @@ export default function Gallery() {
             </div>
           </div>
           <div className="gallery-item" data-category="forest" data-src="assets/images/garden_pond.jpg" data-title="Natural Water Retention Pond & Serene Lotus Garden" data-reveal data-delay="3">
-            <Image src="/assets/images/garden_pond.jpg" alt="Life in Motion Pimpri - Natural Water Retention Pond & Serene Lotus Garden" width={800} height={600} style={{ width: '100%', height: 'auto' }} />
+            <Image src="/assets/images/garden_pond.jpg" alt="The Arena Pimpri - Natural Water Retention Pond & Serene Lotus Garden" width={800} height={600} style={{ width: '100%', height: 'auto' }} />
             <div className="gallery-caption">
               <span className="gallery-tag">Zen Sanctuary</span>
               <h4>Lotus Garden & Retention Pond</h4>
@@ -71,7 +71,7 @@ export default function Gallery() {
             </div>
           </div>
           <div className="gallery-item" data-category="architecture" data-src="assets/images/hero.jpg" data-title="Aerial Skyscraper Overview & 80,000 Sq. Ft. Township" data-reveal data-delay="8">
-            <Image src="/assets/images/hero.jpg" alt="Life in Motion Pimpri - Aerial Skyscraper Overview & 80,000 Sq. Ft. Township" width={800} height={600} style={{ width: '100%', height: 'auto' }} />
+            <Image src="/assets/images/hero.jpg" alt="The Arena Pimpri - Aerial Skyscraper Overview & 80,000 Sq. Ft. Township" width={800} height={600} style={{ width: '100%', height: 'auto' }} />
             <div className="gallery-caption">
               <span className="gallery-tag">Township View</span>
               <h4>Aerial Skyscraper Overview</h4>

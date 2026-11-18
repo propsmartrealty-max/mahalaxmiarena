@@ -27,7 +27,7 @@ export default function Hero({ h1, keyword }: { h1?: string, keyword?: string })
       <div className="hero-bg-overlay" style={{ zIndex: 2 }}></div>
       
       <div className="container hero-content" style={{ position: 'relative', zIndex: 3 }}>
-        <span className="badge-neon">{keyword ? keyword.toUpperCase() : "MAHALAXMI THE ARENA • LIFE IN MOTION PIMPRI"}</span>
+        <span className="badge-neon">{keyword ? keyword.toUpperCase() : "MAHALAXMI THE ARENA • SPORTS TOWNSHIP PIMPRI"}</span>
 
         {h1 ? (
           <>
