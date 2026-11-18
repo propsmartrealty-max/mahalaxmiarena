@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import crypto from 'crypto';
 import {
   enqueueLead,
   markLeadSent,
@@ -73,15 +72,16 @@ export async function POST(request: Request) {
     }
 
     // ── C. Origin / Referer Validation ────────
-    const origin = request.headers.get('origin') || '';
-    const referer = request.headers.get('referer') || '';
+    const origin = request.headers.get('origin') || request.headers.get('referer') || '';
     const isAllowedHost =
       !origin ||
       origin.includes('kohinoorthearena.in') ||
       origin.includes('mahalaxmithearena.in') ||
       origin.includes('localhost') ||
       origin.includes('127.0.0.1') ||
-      origin.includes('.vercel.app');
+      origin.includes('.vercel.app') ||
+      origin.includes('.pages.dev') ||
+      origin.includes('.workers.dev');
 
     if (!isAllowedHost) {
       console.warn(`[LEAD][SECURITY] Blocked cross-site submission from origin: ${origin}`);

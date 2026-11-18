@@ -13,21 +13,21 @@
     "audit:performance": "sh scripts/performance-audit.sh"
   },
   "dependencies": {
-    "next": "16.2.12",
-    "nodemailer": "^9.0.3",
+    "next": "15.2.4",
+    "nodemailer": "^9.1.1",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/nodemailer": "^8.0.1",
+    "@types/nodemailer": "^8.0.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "broken-link-checker": "^0.7.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.12",
-    "typescript": "^5",
-    "next-sitemap": "^4.0.0",
     "lighthouse": "^12.0.0",
-    "broken-link-checker": "^0.7.0"
+    "next-sitemap": "^4.0.0",
+    "typescript": "^5"
   }
 }
