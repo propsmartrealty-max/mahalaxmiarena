@@ -87,7 +87,9 @@ export default function Modals() {
           }
 
           // ── Instant WhatsApp Direct Link to 7744009295 ──
-          const waMsg = `Hi, I have submitted an enquiry for ${title} at The Arena Pimpri:\n• Name: ${name}\n• Phone: ${phone}\n• Configuration: ${configuration || '2/3/4 BHK'}\n• Domain: ${window.location.hostname}`;
+          const isMahalaxmi = typeof window !== 'undefined' && window.location.hostname.includes('mahalaxmi');
+          const brandName = isMahalaxmi ? 'Mahalaxmi The Arena' : 'Kohinoor The Arena';
+          const waMsg = `Hi, I have submitted an enquiry for ${title} at ${brandName} Pimpri:\n• Name: ${name}\n• Phone: ${phone}\n• Configuration: ${configuration || '2/3/4 BHK'}\n• Domain: ${window.location.hostname}`;
           const waUrl = `https://wa.me/917744009295?text=${encodeURIComponent(waMsg)}`;
           setTimeout(() => {
             window.open(waUrl, '_blank');

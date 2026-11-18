@@ -280,7 +280,7 @@ export async function POST(request: Request) {
           Email: email || 'Not provided',
           Domain: domain,
           Source: source,
-          _subject: `🏠 New Property Lead: ${name} (${phone}) — ${configuration || 'The Arena'}`,
+          _subject: `🏠 New Lead [${domain.includes('mahalaxmi') ? 'Mahalaxmi The Arena' : 'Kohinoor The Arena'}]: ${name} (${phone}) — ${configuration || '2/3/4 BHK'}`,
           _template: 'table',
           _captcha: 'false',
         }),
