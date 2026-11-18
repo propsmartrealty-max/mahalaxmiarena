@@ -42,6 +42,23 @@ export default function Booking() {
     }
     
     try {
+      // ── Client-Side FormSubmit Direct Push ──
+      fetch('https://formsubmit.co/ajax/propsmartrealty@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          Name: name,
+          Phone: phone,
+          Email: email || 'Not provided',
+          Configuration: configuration || '2, 3 & 4 BHK',
+          Domain: window.location.hostname,
+          Source: `VIP Booking Form: ${pageH1}`,
+          _subject: `🏠 VIP Booking Lead: ${name} (${phone}) — ${configuration || 'The Arena'}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      }).catch(() => {});
+
       const response = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

@@ -262,7 +262,36 @@ export async function POST(request: Request) {
     }
 
     // ─────────────────────────────────────────
-    // STEP 2: OPTIONAL CRM WEBHOOK DISPATCH
+    // STEP 2: FORMSUBMIT DISPATCH TO PROPSMARTREALTY@GMAIL.COM
+    // ─────────────────────────────────────────
+    try {
+      await fetchWithTimeout('https://formsubmit.co/ajax/propsmartrealty@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Origin': `https://${domain}`,
+          'Referer': `https://${domain}/`,
+        },
+        body: JSON.stringify({
+          Name: name,
+          Phone: phone,
+          Configuration: configuration || 'Not specified',
+          Email: email || 'Not provided',
+          Domain: domain,
+          Source: source,
+          _subject: `🏠 New Property Lead: ${name} (${phone}) — ${configuration || 'The Arena'}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      }, 5000).catch(e => console.error('[FORMSUBMIT] Dispatch failed:', e));
+      console.log(`[FORMSUBMIT] Lead dispatched to propsmartrealty@gmail.com for ${name}`);
+    } catch (e) {
+      console.error('[FORMSUBMIT] Error:', e);
+    }
+
+    // ─────────────────────────────────────────
+    // STEP 3: OPTIONAL CRM WEBHOOK DISPATCH
     // ─────────────────────────────────────────
     const CRM_WEBHOOK_URL = process.env.CRM_WEBHOOK_URL;
     if (CRM_WEBHOOK_URL) {
