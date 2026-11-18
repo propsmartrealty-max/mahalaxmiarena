@@ -89,8 +89,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.70,
   }));
 
-  // ── 3. High-Intent Master Keyword Hub Pages (Strictly domain-isolated) ──
-  const pseoRoutes: MetadataRoute.Sitemap = matrix.slice(0, 1500).map((page) => ({
+  // ── 3. High-Intent Master Keyword Hub Pages (10,000 URLs for Google Impressions Dominance) ──
+  const pseoRoutes: MetadataRoute.Sitemap = matrix.slice(0, 10000).map((page) => ({
     url: `${baseUrl}/${page.slug}`,
     lastModified: buildDate,
     changeFrequency: (page.category === 'Master Real Estate Hub' ? 'daily' : 'weekly') as 'daily' | 'weekly',
