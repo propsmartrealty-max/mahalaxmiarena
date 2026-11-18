@@ -3,3 +3,10 @@ compatibility_date = "2026-11-18"
 compatibility_flags = ["nodejs_compat"]
 main = ".open-next/worker.js"
 assets = { directory = ".open-next/assets", binding = "ASSETS" }
+
+[triggers]
+crons = ["15 0 * * *"]
+
+[vars]
+GOOGLE_INDEXING_CLIENT_EMAIL = "mahaxmi@vivid-reality-419916.iam.gserviceaccount.com"
+LEAD_RECIPIENT_EMAIL = "propsmartrealty@gmail.com"

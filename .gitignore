@@ -35,6 +35,7 @@ yarn-error.log*
 *service-account*.json
 credentials*.json
 *.key
+.indexing-state.json
 
 # vercel
 .vercel
