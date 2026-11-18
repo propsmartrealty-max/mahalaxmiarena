@@ -15,10 +15,7 @@ export const revalidate = 3600; // Edge Route Caching (1 Hour)
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const matrix = generatePSEOMatrix();
-  return matrix
-    .filter(p => p.category === 'Master Real Estate Hub' || p.slug.includes('pcmc-metro') || p.slug.includes('kohinoor-world-towers'))
-    .map(p => ({ slug: p.slug }));
+  return [];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

@@ -80,68 +80,59 @@ export default function Footer({
       </div>
 
       <div className="footer-seo-block" style={{ marginTop: "3rem", paddingTop: "2rem", borderTop: "1px solid rgba(255,255,255,0.1)", fontSize: "0.75rem", color: "rgba(255,255,255,0.4)" }}>
-        <h6 style={{ color: "rgba(255,255,255,0.7)", marginBottom: "1rem", letterSpacing: "1px", textTransform: "uppercase", fontSize: "0.8rem" }}>Explore Premium Properties Across PCMC &amp; Pune</h6>
+        <h6 style={{ color: "rgba(255,255,255,0.7)", marginBottom: "1rem", letterSpacing: "1px", textTransform: "uppercase", fontSize: "0.8rem" }}>The Arena • Landmark Sports Township Across Pimpri-Chinchwad &amp; Pune</h6>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", lineHeight: "1.6" }}>
-          {/* Brands & Projects Silos */}
-          <Link href={coDevSlug} className="seo-link">Mahalaxmi The Arena Pimpri</Link> &bull;
+          {/* Brands & Joint Venture Entities */}
           <Link href={primarySlug} className="seo-link">Kohinoor The Arena</Link> &bull;
-          <span className="seo-link">The Arena Pimpri</span> &bull;
-          <span className="seo-link">The Arena Pune</span> &bull;
-          <span className="seo-link">Kohinoor Arena Pimpri</span> &bull;
-          <span className="seo-link">The Arena PCMC</span> &bull;
-          {/* Pimpri & PCMC Core */}
-          <span className="seo-link">Flats in Pimpri</span> &bull;
-          <span className="seo-link">Luxury apartments in Pimpri</span> &bull;
-          <span className="seo-link">Residential projects in Pimpri</span> &bull;
-          <span className="seo-link">Buy flat in Pimpri</span> &bull;
-          <span className="seo-link">2 BHK flats in Pimpri</span> &bull;
-          <span className="seo-link">3 BHK luxury apartments Pimpri</span> &bull;
-          <span className="seo-link">4 BHK flats in Pimpri</span> &bull;
-          <span className="seo-link">PCMC real estate</span> &bull;
-          <span className="seo-link">Premium apartments PCMC</span> &bull;
-          <span className="seo-link">Best residential projects PCMC</span> &bull;
-          {/* Chinchwad, Akurdi, Nigdi */}
-          <span className="seo-link">Flats in Chinchwad</span> &bull;
-          <span className="seo-link">Luxury apartments Chinchwad</span> &bull;
-          <span className="seo-link">Ready possession Chinchwad</span> &bull;
-          <span className="seo-link">Flats in Akurdi</span> &bull;
-          <span className="seo-link">Premium homes Akurdi</span> &bull;
-          <span className="seo-link">Flats in Nigdi</span> &bull;
-          <span className="seo-link">2 BHK Nigdi</span> &bull;
-          {/* Wakad, Hinjewadi, Tathawade */}
-          <span className="seo-link">Flats in Wakad</span> &bull;
-          <span className="seo-link">Buy apartment Wakad</span> &bull;
-          <span className="seo-link">Flats near Hinjewadi IT Park</span> &bull;
-          <span className="seo-link">Luxury apartments near Hinjewadi</span> &bull;
-          <span className="seo-link">Investment near Hinjewadi</span> &bull;
-          <span className="seo-link">Flats in Tathawade</span> &bull;
-          <span className="seo-link">2 BHK Tathawade</span> &bull;
-          {/* Ravet, Punawale */}
-          <span className="seo-link">Flats in Ravet</span> &bull;
-          <span className="seo-link">Premium homes Ravet</span> &bull;
-          <span className="seo-link">3 BHK Ravet</span> &bull;
-          <span className="seo-link">Flats in Punawale</span> &bull;
-          <span className="seo-link">New launch Punawale</span> &bull;
-          {/* Moshi, Bhosari */}
-          <span className="seo-link">Flats in Moshi</span> &bull;
-          <span className="seo-link">Luxury apartments Moshi</span> &bull;
-          <span className="seo-link">Ready possession Moshi</span> &bull;
-          <span className="seo-link">Flats in Bhosari</span> &bull;
-          <span className="seo-link">Investment property Bhosari</span> &bull;
-          {/* Baner, Balewadi */}
-          <span className="seo-link">Luxury apartments Baner</span> &bull;
-          <span className="seo-link">Flats in Baner</span> &bull;
-          <span className="seo-link">Ready possession Baner</span> &bull;
-          <span className="seo-link">Flats in Balewadi</span> &bull;
-          <span className="seo-link">New launch Balewadi</span> &bull;
-          {/* Landmarks */}
+          <Link href={coDevSlug} className="seo-link">Mahalaxmi The Arena</Link> &bull;
+          <span className="seo-link">Mahalaxmi Kohinoor The Arena</span> &bull;
+          <span className="seo-link">Kohinoor Mahalaxmi Arena Pimpri</span> &bull;
+          <span className="seo-link">Kohinoor The Arena Pimpri</span> &bull;
+          <span className="seo-link">Mahalaxmi The Arena Pimpri</span> &bull;
+          <span className="seo-link">Kohinoor Arena Pune</span> &bull;
+          <span className="seo-link">Mahalaxmi Arena Pune</span> &bull;
+          <span className="seo-link">Agarwal Sukhwani The Arena Pimpri</span> &bull;
+          {/* Configurations */}
+          <span className="seo-link">2 BHK flats in Kohinoor The Arena</span> &bull;
+          <span className="seo-link">3 BHK flats in Kohinoor The Arena</span> &bull;
+          <span className="seo-link">4 BHK luxury apartments Pimpri</span> &bull;
+          <span className="seo-link">2 BHK flats in Mahalaxmi The Arena</span> &bull;
+          <span className="seo-link">3 BHK flats in Mahalaxmi The Arena</span> &bull;
+          <span className="seo-link">4 BHK sky residences PCMC</span> &bull;
+          <span className="seo-link">2 BHK flats near Finolex Chowk</span> &bull;
+          <span className="seo-link">3 BHK flats near Finolex Chowk</span> &bull;
+          {/* Sports Township & World-Class Amenities */}
+          <span className="seo-link">Sports township in Pune</span> &bull;
+          <span className="seo-link">Sports township in Pimpri</span> &bull;
+          <span className="seo-link">Apartments with FIFA football turf</span> &bull;
+          <span className="seo-link">Flats with tennis court Pune</span> &bull;
+          <span className="seo-link">Apartments with padel court</span> &bull;
+          <span className="seo-link">Pickleball court Pune</span> &bull;
+          <span className="seo-link">Olympic infinity swimming pool</span> &bull;
+          <span className="seo-link">1,787 sq.ft. gym Pimpri</span> &bull;
+          <span className="seo-link">Japanese forest bathing garden</span> &bull;
+          <span className="seo-link">Apartments with badminton &amp; squash courts</span> &bull;
+          <span className="seo-link">Club Ileseum Sports Management</span> &bull;
+          {/* Transit & Key PCMC Nodes */}
+          <span className="seo-link">Flats near PCMC Metro Station</span> &bull;
           <span className="seo-link">Flats near Pimpri Metro Station</span> &bull;
-          <span className="seo-link">Flats near PCMC Metro</span> &bull;
-          <span className="seo-link">Apartments near MIDC Pimpri</span> &bull;
-          <span className="seo-link">Homes near Bhosari MIDC</span> &bull;
-          <span className="seo-link">Flats near Chakan MIDC</span> &bull;
+          <span className="seo-link">Flats near Kohinoor World Towers (KWT)</span> &bull;
+          <span className="seo-link">Flats near Old Mumbai Pune Highway</span> &bull;
+          <span className="seo-link">Residential projects near Pimpri Railway Station</span> &bull;
+          <span className="seo-link">Flats near Chinchwad Railway Station</span> &bull;
+          <span className="seo-link">Apartments near Hinjewadi IT Park</span> &bull;
           <span className="seo-link">Flats near Aditya Birla Hospital</span> &bull;
-          <span className="seo-link">Flats near DY Patil College</span>
+          <span className="seo-link">Apartments near Bhosari MIDC</span> &bull;
+          <span className="seo-link">Flats near Chakan MIDC</span> &bull;
+          {/* Regional & Multilingual Queries */}
+          <span className="seo-link">पिंपरी मध्ये 2 BHK फ्लॅट</span> &bull;
+          <span className="seo-link">पिंपरी मध्ये 3 BHK फ्लॅट</span> &bull;
+          <span className="seo-link">पिंपरी मध्ये 4 BHK फ्लॅट</span> &bull;
+          <span className="seo-link">कोहिनूर द अरेना पिंपरी</span> &bull;
+          <span className="seo-link">महालक्ष्मी द अरेना पिंपरी</span> &bull;
+          <span className="seo-link">पिंपरी स्पोर्ट्स टाउनशिप</span> &bull;
+          <span className="seo-link">Pimpri madhe flat booking</span> &bull;
+          <span className="seo-link">PCMC metro javal flat</span>
         </div>
       </div>
 
