@@ -16,7 +16,7 @@ type FooterProps = {
 };
 
 export default function Footer({
-  mahaRera = 'P5210005XXXX',
+  mahaRera = 'PR1261012602774',
   primarySlug = '/kohinoor-the-arena-pimpri',
   coDevSlug = '/mahalaxmi-the-arena-pimpri',
   projectName = 'The Arena',

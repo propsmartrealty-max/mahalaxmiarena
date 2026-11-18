@@ -162,7 +162,7 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
       ...MASTER_SHARED_KEYWORDS,
     ],
     primarySlug: '/kohinoor-the-arena-pimpri',
-    mahaRera: 'P5210005XXXX',
+    mahaRera: 'PR1261012602774',
     contactPhone: process.env.NEXT_PUBLIC_CONTACT_PHONE || '+91-7711993434',
     address: {
       street: 'The Arena, Sports Township, Pimpri',
@@ -231,7 +231,7 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
       ...MASTER_SHARED_KEYWORDS,
     ],
     primarySlug: '/mahalaxmi-the-arena-pimpri',
-    mahaRera: 'P5210005XXXX',
+    mahaRera: 'PR1261012602774',
     contactPhone: process.env.NEXT_PUBLIC_CONTACT_PHONE || '+91-7711993434',
     address: {
       street: 'The Arena, Sports Township, Pimpri',

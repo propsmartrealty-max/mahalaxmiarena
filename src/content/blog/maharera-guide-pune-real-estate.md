@@ -47,7 +47,7 @@ This rule is what separates MahaRERA-registered projects from illegal or unregis
 
 ## Mahalaxmi The Arena & Kohinoor The Arena — MahaRERA Status
 
-Both **Mahalaxmi The Arena** (developed by Mahalaxmi Group in JV with Kohinoor Group) and **Kohinoor The Arena** are MahaRERA registered projects. Verify using registration number **P5210005XXXX** at the official portal. All documents, approved plans, and financial statements are publicly accessible as mandated by law.
+Both **Mahalaxmi The Arena** (developed by Mahalaxmi Group in JV with Kohinoor Group) and **Kohinoor The Arena** are MahaRERA registered projects. Verify using registration number **PR1261012602774** at the official portal. All documents, approved plans, and financial statements are publicly accessible as mandated by law.
 
 ## Bottom Line
 

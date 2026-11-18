@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "Is Mahalaxmi Kohinoor The Arena MahaRERA registered?",
-    answer: "Yes, The Arena is a 100% MahaRERA registered project in PCMC with complete legal transparency, sanctioned layouts, and dedicated 70% project escrow protection under registration number P5210005XXXX."
+    answer: "Yes, The Arena is a 100% MahaRERA registered project in PCMC with complete legal transparency, sanctioned layouts, and dedicated 70% project escrow protection under registration number PR1261012602774."
   },
   {
     question: "Can NRIs invest in Mahalaxmi Kohinoor Pune real estate?",
