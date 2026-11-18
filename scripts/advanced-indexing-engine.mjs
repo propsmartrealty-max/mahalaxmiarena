@@ -148,8 +148,16 @@ async function runIndexingEngine() {
   }
 
   // ── Step A: Direct Google Indexing API ──────────────────────────
-  const clientEmail = process.env.GOOGLE_INDEXING_CLIENT_EMAIL || process.env.GOOGLE_CLIENT_EMAIL;
-  const privateKey = process.env.GOOGLE_INDEXING_PRIVATE_KEY || process.env.GOOGLE_PRIVATE_KEY;
+  let clientEmail = process.env.GOOGLE_INDEXING_CLIENT_EMAIL || process.env.GOOGLE_CLIENT_EMAIL;
+  let privateKey = process.env.GOOGLE_INDEXING_PRIVATE_KEY || process.env.GOOGLE_PRIVATE_KEY;
+
+  if ((!clientEmail || !privateKey) && fs.existsSync('./service-account.json')) {
+    try {
+      const sa = JSON.parse(fs.readFileSync('./service-account.json', 'utf8'));
+      clientEmail = sa.client_email;
+      privateKey = sa.private_key;
+    } catch {}
+  }
   let googleResults = [];
 
   const googleToken = await getGoogleToken(clientEmail, privateKey);
