@@ -265,13 +265,14 @@ export async function POST(request: Request) {
     // STEP 2: FORMSUBMIT DISPATCH TO PROPSMARTREALTY@GMAIL.COM
     // ─────────────────────────────────────────
     try {
-      await fetchWithTimeout('https://formsubmit.co/ajax/propsmartrealty@gmail.com', {
+      const fsRes = await fetchWithTimeout('https://formsubmit.co/ajax/propsmartrealty@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
           'Origin': `https://${domain}`,
           'Referer': `https://${domain}/`,
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         },
         body: JSON.stringify({
           Name: name,
@@ -283,11 +284,13 @@ export async function POST(request: Request) {
           _subject: `🏠 New Lead [${domain.includes('mahalaxmi') ? 'Mahalaxmi The Arena' : 'Kohinoor The Arena'}]: ${name} (${phone}) — ${configuration || '2/3/4 BHK'}`,
           _template: 'table',
           _captcha: 'false',
+          _replyto: email || 'propsmartrealty@gmail.com',
         }),
-      }, 5000).catch(e => console.error('[FORMSUBMIT] Dispatch failed:', e));
-      console.log(`[FORMSUBMIT] Lead dispatched to propsmartrealty@gmail.com for ${name}`);
+      }, 7000);
+      const fsData = await fsRes.text();
+      console.log(`[FORMSUBMIT] Status: ${fsRes.status}, Response: ${fsData}`);
     } catch (e) {
-      console.error('[FORMSUBMIT] Error:', e);
+      console.error('[FORMSUBMIT] Dispatch failed:', e);
     }
 
     // ─────────────────────────────────────────

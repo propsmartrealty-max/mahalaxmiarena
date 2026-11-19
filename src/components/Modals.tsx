@@ -44,23 +44,6 @@ export default function Modals() {
       }
 
       try {
-        // ── Client-Side FormSubmit Direct Push ──
-        fetch('https://formsubmit.co/ajax/propsmartrealty@gmail.com', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            Name: name,
-            Phone: phone,
-            Email: email || 'Not provided',
-            Configuration: configuration || '2/3/4 BHK',
-            Domain: window.location.hostname,
-            Source: `Modal Enquiry: ${title}`,
-            _subject: `🏠 Lead (${title}): ${name} (${phone}) — The Arena`,
-            _template: 'table',
-            _captcha: 'false',
-          }),
-        }).catch(() => {});
-
         const response = await fetch('/api/lead', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -80,21 +63,21 @@ export default function Modals() {
         if (response.ok && data.success) {
           sessionStorage.setItem('mta_lead_captured', 'true');
           window.dispatchEvent(new CustomEvent('arena-close-modal'));
-          window.dispatchEvent(new CustomEvent('arena-toast', { detail: '✅ Success! Connecting to WhatsApp sales desk...' }));
+          window.dispatchEvent(new CustomEvent('arena-toast', { detail: '✅ Enquiry received! Connecting to WhatsApp sales desk...' }));
 
           const win = window as Window & { dataLayer?: Record<string, unknown>[] };
           if (typeof window !== 'undefined' && win.dataLayer) {
             win.dataLayer.push({ event: 'lead_captured', lead_type: title, configuration, lead_source: window.location.href });
           }
 
-          // ── Instant WhatsApp Direct Link to 7744009295 ──
+          // ── Instant WhatsApp Direct Link to 7744009295 (Bypasses mobile popup blockers) ──
           const isMahalaxmi = typeof window !== 'undefined' && window.location.hostname.includes('mahalaxmi');
           const brandName = isMahalaxmi ? 'Mahalaxmi The Arena' : 'Kohinoor The Arena';
           const waMsg = `Hi, I have submitted an enquiry for ${title} at ${brandName} Pimpri:\n• Name: ${name}\n• Phone: ${phone}\n• Configuration: ${configuration || '2/3/4 BHK'}\n• Domain: ${window.location.hostname}`;
           const waUrl = `https://wa.me/917744009295?text=${encodeURIComponent(waMsg)}`;
-          setTimeout(() => {
-            window.open(waUrl, '_blank');
-          }, 600);
+          
+          // Immediate navigation works reliably on iOS Safari, Android Chrome & Desktop
+          window.location.href = waUrl;
         } else {
           const errMsg = data.error || 'Submission failed. Please try again.';
           window.dispatchEvent(new CustomEvent('arena-toast', { detail: `⚠️ ${errMsg}` }));

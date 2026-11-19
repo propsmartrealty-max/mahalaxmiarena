@@ -47,23 +47,6 @@ export default function Booking() {
     }
     
     try {
-      // ── Client-Side FormSubmit Direct Push ──
-      fetch('https://formsubmit.co/ajax/propsmartrealty@gmail.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          Name: name,
-          Phone: phone,
-          Email: email || 'Not provided',
-          Configuration: configuration || '2, 3 & 4 BHK',
-          Domain: window.location.hostname,
-          Source: `VIP Booking Form: ${pageH1}`,
-          _subject: `🏠 VIP Booking Lead: ${name} (${phone}) — ${configuration || 'The Arena'}`,
-          _template: 'table',
-          _captcha: 'false',
-        }),
-      }).catch(() => {});
-
       const response = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -86,18 +69,18 @@ export default function Booking() {
           win.gtag('event', 'conversion', { 'send_to': process.env.NEXT_PUBLIC_GADS_CONVERSION_LABEL || 'AW-CONVERSION/label' });
         }
         
-        window.dispatchEvent(new CustomEvent('arena-toast', { detail: '✅ Success! Opening WhatsApp enquiry with sales desk...' }));
+        window.dispatchEvent(new CustomEvent('arena-toast', { detail: '✅ Enquiry received! Opening WhatsApp sales desk...' }));
         sessionStorage.setItem('mta_lead_captured', 'true');
         form.reset();
 
-        // ── Instant WhatsApp Direct Link to 7744009295 ──
+        // ── Instant WhatsApp Direct Link to 7744009295 (Bypasses mobile popup blockers) ──
         const isMahalaxmi = typeof window !== 'undefined' && window.location.hostname.includes('mahalaxmi');
         const brandName = isMahalaxmi ? 'Mahalaxmi The Arena' : 'Kohinoor The Arena';
         const waMsg = `Hi, I have submitted an official enquiry for ${brandName} Pimpri:\n• Name: ${name}\n• Phone: ${phone}\n• Configuration: ${configuration || '2, 3 & 4 BHK'}\n• Domain: ${window.location.hostname}`;
         const waUrl = `https://wa.me/917744009295?text=${encodeURIComponent(waMsg)}`;
-        setTimeout(() => {
-          window.open(waUrl, '_blank');
-        }, 600);
+        
+        // Immediate navigation works reliably on iOS Safari, Android Chrome & Desktop
+        window.location.href = waUrl;
       } else {
         window.dispatchEvent(new CustomEvent('arena-toast', { detail: `⚠️ ${data.error || 'Submission failed.'}` }));
       }
