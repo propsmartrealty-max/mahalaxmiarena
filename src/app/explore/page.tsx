@@ -6,9 +6,14 @@ import { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { getDomainConfig } from '@/lib/domain-config';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'kohinoorthearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'kohinoorthearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
   
   const title = `Explore Properties in Pune | 75+ Micro-Markets | ${cfg.brand}`;
@@ -51,8 +56,11 @@ const MICRO_MARKETS = [
 const INTENTS = ["2-bhk", "3-bhk", "4-bhk", "luxury", "sports-township"];
 
 export default async function Explore() {
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'kohinoorthearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'kohinoorthearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
 
   return (

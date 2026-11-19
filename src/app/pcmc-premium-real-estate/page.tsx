@@ -3,9 +3,14 @@ import { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { getDomainConfig } from '@/lib/domain-config';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'kohinoorthearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'kohinoorthearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
   return {
     title: `PCMC Premium Real Estate | Luxury Homes in Pimpri Chinchwad`,
@@ -13,7 +18,6 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: { canonical: `${cfg.canonical}/pcmc-premium-real-estate` },
   };
 }
-export const revalidate = 3600;
 
 export default function Page() {
   return <MainLayout h1="PCMC Premium Real Estate" keyword="premium real estate pcmc pimpri chinchwad" />;

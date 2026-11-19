@@ -320,6 +320,7 @@ export async function POST(request: Request) {
     }
 
     // ── K. Return Reliable Enterprise 200 Response ──
+    console.log(`[LEAD] Lead ${queuedLead.id} processed. Email dispatch status: ${emailStatus}`);
     return NextResponse.json(
       {
         success: true,

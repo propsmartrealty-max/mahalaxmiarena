@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { submitBatchUrls } from '@/lib/google-indexing';
+import { submitToIndexNow } from '@/lib/indexnow';
 import { generatePSEOMatrix } from '@/lib/pseo-data';
 import { getBlogPosts } from '@/lib/blog';
 import { ALL_DOMAINS } from '@/lib/domain-config';
@@ -140,18 +141,27 @@ export async function GET(request: Request) {
   }
   report.sitemapPing = sitemapPings.join(' | ');
 
-  // ── STEP 3: Submit URLs to Google Indexing API ──────────────────
+  // ── STEP 3: Submit to IndexNow (Bing / Yandex / Partners) ─────────
   const allUrls = buildUrlList();
+  report.totalUrls = allUrls.length;
+
+  const indexNowResults: Record<string, unknown> = {};
+  for (const domain of ALL_DOMAINS) {
+    const host = domain.replace(/^https?:\/\//, '');
+    const domainUrls = allUrls.filter(u => u.startsWith(domain)).slice(0, 100);
+    const res = await submitToIndexNow(host, domainUrls);
+    indexNowResults[host] = res;
+  }
+
+  // ── STEP 4: Submit URLs to Google Indexing API (Rate-Limited to stay under Cloudflare 50 subrequests) ──
   const now = new Date();
   const start = new Date(now.getFullYear(), 0, 0);
   const diff = now.getTime() - start.getTime();
   const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
   
-  const batchSize = 180;
+  const batchSize = 30; // 30 subrequests max, perfectly safe under 50 subrequest limit
   const startIndex = (dayOfYear * batchSize) % allUrls.length;
   const urlsToSubmit = allUrls.slice(startIndex, startIndex + batchSize);
-  
-  report.totalUrls = allUrls.length;
 
   const GOOGLE_INDEXING_CLIENT_EMAIL = process.env.GOOGLE_INDEXING_CLIENT_EMAIL;
   if (!GOOGLE_INDEXING_CLIENT_EMAIL) {
@@ -166,5 +176,5 @@ export async function GET(request: Request) {
   const duration = ((Date.now() - startTime) / 1000).toFixed(2);
   console.log(`[CRON] Complete in ${duration}s. Outbox flushed: ${report.leadOutbox.flushed}, Indexing submitted: ${report.submitted}`);
 
-  return NextResponse.json({ ...report, durationSeconds: duration }, { status: 200 });
+  return NextResponse.json({ ...report, indexNow: indexNowResults, durationSeconds: duration }, { status: 200 });
 }

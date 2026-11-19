@@ -1,7 +1,6 @@
-import { getPostBySlug, getBlogPosts } from "@/lib/blog";
+import { getPostBySlug } from "@/lib/blog";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { notFound } from "next/navigation";
 import NotFound from "@/app/not-found";
 import { Metadata } from "next";
 

@@ -8,8 +8,11 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const headersList = await headers();
-  const host = headersList.get('host') || 'www.kohinoorthearena.in';
+  let host = 'www.kohinoorthearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'www.kohinoorthearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
   const baseUrl = cfg.canonical;
   const buildDate = new Date().toISOString();

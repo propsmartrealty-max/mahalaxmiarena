@@ -3,9 +3,14 @@ import { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { getDomainConfig } from '@/lib/domain-config';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'kohinoorthearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'kohinoorthearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
   return {
     title: cfg.title,
@@ -24,10 +29,14 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'kohinoorthearena.in';
+  let intent: string | null = null;
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'kohinoorthearena.in';
+    intent = headersList.get('x-arena-intent');
+  } catch {}
   const cfg = getDomainConfig(host);
-  const intent = headersList.get('x-arena-intent');
   
   let h1 = `${cfg.arenaName} Pimpri Pune | ${cfg.brand} & ${cfg.coDevName} Sports Township`;
   let keyword = `${cfg.arenaName.toUpperCase()} • SPORTS TOWNSHIP PIMPRI`;

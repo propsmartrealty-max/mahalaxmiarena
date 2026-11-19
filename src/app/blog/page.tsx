@@ -6,9 +6,14 @@ import { Metadata } from "next";
 import { headers } from "next/headers";
 import { getDomainConfig } from "@/lib/domain-config";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'kohinoorthearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'kohinoorthearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
 
   const title = `Real Estate Market Insights & Guides | ${cfg.arenaName} by ${cfg.brand}`;
@@ -30,11 +35,12 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export const revalidate = 3600;
-
 export default async function BlogList() {
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'kohinoorthearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'kohinoorthearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
   const posts = getBlogPosts();
 

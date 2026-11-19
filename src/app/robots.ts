@@ -3,8 +3,11 @@ import { headers } from 'next/headers';
 import { getDomainConfig } from '@/lib/domain-config';
 
 export default async function robots(): Promise<MetadataRoute.Robots> {
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'kohinoorthearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'kohinoorthearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
 
   // ── Block ALL bots on Vercel preview / staging ──

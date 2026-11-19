@@ -3,9 +3,14 @@ import { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { getDomainConfig } from '@/lib/domain-config';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const host = headersList.get('host') || 'kohinoorthearena.vercel.app';
+  let host = 'mahalaxmithearena.in';
+  try {
+    const headersList = await headers();
+    host = headersList.get('host') || 'mahalaxmithearena.in';
+  } catch {}
   const cfg = getDomainConfig(host);
   return {
     title: `Mahalaxmi The Arena Pimpri | Premium Sports Township`,
@@ -13,7 +18,6 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: { canonical: `${cfg.canonical}/mahalaxmi-the-arena-pimpri` },
   };
 }
-export const revalidate = 3600;
 
 export default function Page() {
   return <MainLayout h1="Mahalaxmi The Arena Pimpri" keyword="mahalaxmi the arena pimpri" />;
