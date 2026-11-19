@@ -4,6 +4,13 @@ compatibility_flags = ["nodejs_compat"]
 main = ".open-next/worker.js"
 assets = { directory = ".open-next/assets", binding = "ASSETS" }
 
+routes = [
+  { pattern = "kohinoorthearena.in", custom_domain = true },
+  { pattern = "www.kohinoorthearena.in", custom_domain = true },
+  { pattern = "mahalaxmithearena.in", custom_domain = true },
+  { pattern = "www.mahalaxmithearena.in", custom_domain = true }
+]
+
 [triggers]
 crons = ["15 0 * * *"]
 
